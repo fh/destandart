@@ -1,19 +1,20 @@
 <?php
-
 /*
 Plugin Name: DeStandart
 Plugin URI: http://holzhauer.it
 Description: Replace 'Standart' with 'Standard' in comments.
 Version: 0.1
 Author: Florian Holzhauer
-License: WTFPL*/
+License: WTFPL
+*/
 
 $GLOBALS['destandart'] = new destandart();
 
 function fhdbg($sString) {
-   // echo $sString;
+    // echo $sString;
 }
-class destandart {
+
+class destandart {
     
     var $version = '0.1';
     var $root    = false;
@@ -33,13 +34,22 @@ function fhdbg($sString) {
 
     }
     
-    function replacestring($comment) {        //sure, could be done with regexes way nicer, but I just want to get rid of 'Standart' and 'Euronen'        //makes me kinda nuts.                $grmbl = array('andart','uronen');        $yay   = array('andard','uro');                $comment = str_replace($grmbl, $yay, $comment);        
-        return $comment;    }
+    function replacestring($comment) {
+        //sure, could be done with regexes way nicer, but I just want to get rid of 'Standart' and 'Euronen'
+        //makes me kinda nuts.
+        
+        $grmbl = array('andart','uronen');
+        $yay   = array('andard','uro');
+        
+        $comment = str_replace($grmbl, $yay, $comment);
+        
+        return $comment;
+    }
 
     function start() {
         if(is_admin()) {
             if(get_option('destandart-warnings')) {
-                 add_action( 'admin_notices', create_function('', 'echo \'<div id="message" class="error"><p>' . get_option( 'destandart-warnings' ) . '</p></div>\';') );
+                add_action( 'admin_notices', create_function('', 'echo \'<div id="message" class="error"><p>' . get_option( 'destandart-warnings' ) . '</p></div>\';') );
             }
         }
     }
