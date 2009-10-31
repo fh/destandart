@@ -10,10 +10,6 @@ License: WTFPL
 
 $GLOBALS['destandart'] = new destandart();
 
-function fhdbg($sString) {
-    // echo $sString;
-}
-
 class destandart {
     
     var $version = '0.1';
