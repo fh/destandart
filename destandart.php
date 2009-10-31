@@ -34,8 +34,8 @@ class destandart {
         //sure, could be done with regexes way nicer, but I just want to get rid of 'Standart' and 'Euronen'
         //makes me kinda nuts.
         
-        $grmbl = array('andart','uronen');
-        $yay   = array('andard','uro');
+        $grmbl = array('standart','Standart','Teuronen','Euronen');
+        $yay   = array('standard','Standard','Euro','Euro');
         
         $comment = str_replace($grmbl, $yay, $comment);
         
